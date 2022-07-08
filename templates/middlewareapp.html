@@ -1,0 +1,9 @@
+<h3>App {{app.name}} is on the following servers</h3>
+<ul>
+  {% if app.app_servers|length == 0 %}
+    <li>N/A</li>
+  {% endif %}
+  {% for app_server in app.app_servers %}
+    <li><a href="/middlewareserver/{{app_server.server.name}}">{{app_server.server.name}}</a></li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,9 @@
+<h3>Server {{server.name}} runs the following middleware apps</h3>
+<ul>
+  {% if server.server_apps|length == 0 %}
+    <li>N/A</li>
+  {% endif %}
+  {% for server_app in server.server_apps %}
+    <li><a href="/middlewareapp/{{server_app.app.name}}">{{server_app.app.name}}</a></li>
+  {% endfor %}
+</ul>
